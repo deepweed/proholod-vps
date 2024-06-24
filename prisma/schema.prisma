@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Sales{
+  id Int @id @default(autoincrement())
+  title String
+  imagePath String @map("image_path")
+  cardDescription String @map("card_description")
+  description String
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+  isInStock Boolean @default(true) @map("is_in_stock")
+  title String 
+  cost Decimal
+  brand String
+  series String?
+  description String
+  href String @unique
+  category String @default("unknown")
+  stats Stats[]
+  images Image[]
+
+  @@map("product")
+}
+
+model Image {
+  id        Int    @id @default(autoincrement())
+  imagePath String[] @map("image_path")
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@map("image")
+}
+
+model Stats {
+  id Int @id @default(autoincrement())
+  isInventor Boolean @map("is_inventor") //Инвертор?
+  connectingPower String @map("connecting_power") @default("Нет данных") //Подключение электропитания
+  recomendSquare Int? @map("recomend_square") //Рекомендуемая площадь помещения, м2
+  coolingKw String @map("cooling_kw") //Производительность, охлаждение, кВт
+  warmingKw String @map("warming_kw") //Производительность, нагрев, кВт
+  diameterOfCondensatePipe String @map("diameter_of_condensate_pipe") @default("Нет данных") //Диаметр трубопровода для слива конденсата, мм
+  maxTrace Int @map("max_trace") //Максимальная длина трассы, м
+  maxHeight Int @map("max_height") //Максимальный перепад высот, м
+  minTempCooling Int @map("min_temp_cooling") //Мин. допустимая температура наружного воздуха в режиме охлаждения, °С
+  maxTempCooling Int @map("max_temp_cooling") //Макс. допустимая температура наружного воздуха в режиме охлаждения, °С
+  minTempWarm Int @map("min_temp_warm") //Мин. допустимая температура наружного воздуха в режиме обогрева °С
+  maxTempWarm Int @map("max_temp_warm") //Макс. допустимая температура наружного воздуха в режиме обогрева °С
+  unitSoundLevel String @map("unit_sound_level") @default("Нет данных") //Уровень звукового давления внутреннего блока, дБ
+  unitSoundLevelBlock String @map("unit_sound_level_block") @default("Нет данных") //Уровень звукового давления наружного блока
+  b_temperatureInCamera String? @map("temperature_in_camera")
+  b_coolRoomValue String? @map("cool_room_value")
+  b_coolWarming String? @map("cool_warming")
+  b_powerConsumption String? @map("power_consumption")
+  b_nominalPower String? @map("nominal_power")
+  b_NoiseLvl String? @map("noise_lvl")
+  b_WinterSet String? @map("winter_set")
+  b_TrackLenght String? @map("track_lenght")
+  b_MaxTrackLenght String? @map("max_track_lenght")
+  b_diametrPipes String? @map("diametr_pipes")
+  width String? //размеры ШхДхВ
+  widthPack String? @map("width_pack") //размеры в упаковке ШхДхВ
+  weight String? //масса кг
+  weightPack String? @map("weight_pack") //масса кг в упаковке
+  widthBlock String? //размеры блока с улицы ШхДхВ
+  widthBlockPack String? @map("width_block_pack") //размеры блока с улицы в упаковке ШхДхВ
+  weightBlock String? //масса блока улица кг
+  weightBlockPack String? @map("weight_block_pack") //масса блока улица в упаковке кг
+  productId Int    @unique
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("stats")
+}
