@@ -16,7 +16,7 @@ jobs:
       matrix:
         node-version: [20.10.0]
     env:
-      DATABASE_URL: ${{secrets.DATABASE_URL}}
+      NEXT_PUBLIC_DATABASE_URL: ${{secrets.NEXT_PUBLIC_DATABASE_URL}}
       NEXT_PUBLIC_TELEGRAM_BOT_TOKEN: ${{secrets.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}}
       NEXT_PUBLIC_TELEGRAM_CHAT_ID: ${{secrets.NEXT_PUBLIC_TELEGRAM_CHAT_ID}}
 
