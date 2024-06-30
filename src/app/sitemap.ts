@@ -15,10 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
       },
       {
-        url: 'https://acme.com/blog',
+        url: 'https://proholod.pro/about',
         lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.5,
       },
     ]
   }

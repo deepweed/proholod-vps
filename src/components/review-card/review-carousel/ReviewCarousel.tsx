@@ -10,7 +10,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 
 const ReviewCarousel = () => {
-    const avitoLink = "https://www.avito.ru/user/005c69fd8dd76d30c503c0f0183fe73e/profile";
+    const avitoLink = "https://www.avito.ru/brands/i374297878";
 
     return (
         <>

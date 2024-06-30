@@ -1,4 +1,6 @@
 import GuaranteeButton from "@/components/guarantee-button/GuaranteeButton";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const GuaranteeService = () => {
     return (
@@ -26,13 +28,25 @@ const GuaranteeService = () => {
                 <li>Неисправности, вызванные неправильным месторасположением оборудования по требованию Заказчика.</li>
                 </ul>
             </div>
-            <p className="mt-8">
-                По окончанию работ производится проверка работоспособности сплит-системы на всех режимах и с максимальной производительностью с учетом температуры в помещении и на улице.
-            </p>
-            <p className="mt-4 mb-10">
-                Гарантийный период составляет 3 года с момента окончания монтажных и пусконаладочных работ, при условии проведения регулярного годового технического обслуживания. Отказ от своевременного проведения годового технического обслуживания прекращает все гарантийные обязательства.
-            </p>
-            <GuaranteeButton />
+            <div>
+                <p className="mt-8">
+                    По окончанию работ производится проверка работоспособности сплит-системы на всех режимах и с максимальной производительностью с учетом температуры в помещении и на улице.
+                </p>
+                <p className="mt-4 mb-5">
+                    Гарантийный период составляет <span className="font-medium">3 года</span> с момента окончания монтажных и пусконаладочных работ, <span className="font-medium">при условии проведения регулярного годового технического обслуживания. Отказ от своевременного проведения годового технического обслуживания прекращает все гарантийные обязательства.</span>
+                </p>
+            </div>
+            <div className="block md:flex">
+                <Button className="w-full mb-3 md:w-[200px] md:mr-3" variant="default" asChild>
+                    <Link href="/guarantee-service/first-service">Первое обслуживание</Link>
+                </Button>
+                <Button className="w-full mb-3 md:w-[200px] md:mr-3" variant="default" asChild>
+                    <Link href="/guarantee-service/second-service">Второе обслуживание</Link>
+                </Button>
+                <Button className="w-full mb-3 md:w-[200px] md:mr-3" variant="default" asChild>
+                    <Link href="/guarantee-service/third-service">Третье обслуживание</Link>
+                </Button>
+            </div>
         </div>
     );
 }

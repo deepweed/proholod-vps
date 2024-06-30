@@ -13,7 +13,7 @@ const Footer = () => {
 
     const vkLink = "https://vk.com/proholodpro";
     const yandexLink = "https://yandex.com/maps/org/prokholod/142837393055";
-    const avitoLink = "https://www.avito.ru/user/005c69fd8dd76d30c503c0f0183fe73e/profile";
+    const avitoLink = "https://www.avito.ru/brands/i374297878";
 
     return (
         <footer className="container mx-auto mb-5 mt-5 bottom-0 w-full">

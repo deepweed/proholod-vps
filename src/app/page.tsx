@@ -26,7 +26,7 @@ export default function Home() {
               </div>
           </Link>
           <div className="block">
-            <Link className="mb-1" href="/service">
+            <Link className="mb-1" href="/service#drenazh">
                 <div className="w-full mb-2 lg:w-[660px] h-[243px] rounded-xl p-7 bg-[#f9fafc] cursor-pointer relative">
                 <h2 className="text-2xl font-semibold md:text-3xl">Дренаж</h2>
                     <p className="text-[18px] font-medium text-gray-500 w-3/4 mt-3 line-clamp-3">

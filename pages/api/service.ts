@@ -13,13 +13,13 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { title, name, phone, model, date, contact } = req.body;
+  const { title, name, phone, contact } = req.body;
 
   if (!name || !phone) {
     return res.status(400).json({ error: 'Name and phone are required' });
   }
 
-  const message = `Новая заявка на #${title}:\n\nИмя: ${name}\nТелефон: ${phone}\n\nМодель: ${model}\n\nДата проведения работ: ${date}\n\nСпособ связи: ${contact}`;
+  const message = `Новая заявка на услугу ${title}:\n\nИмя: ${name}\nТелефон: ${phone}\nСпособ связи: ${contact}\n\n#НоваяЗаявкаНаУслугу`;
 
   const telegramBotToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
   const telegramChatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
