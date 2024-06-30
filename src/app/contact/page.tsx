@@ -38,7 +38,7 @@ export default function Conact() {
                 </a>
                 <iframe src="https://yandex.com/map-widget/v1/org/prokholod/142837393055/?ll=38.263416%2C55.543272&z=17" frameBorder="1" allowFullScreen className="w-full h-[400px] relative"></iframe>
             </div>
-            <p className="font-medium text-sm text-gray-500 mb-4">Адрес: г. Раменское, ул. Михалевича, д. 24</p>
+            <p className="font-medium text-sm text-gray-500 mb-4">Адрес: г. Раменское, Производственная улица, 17</p>
         </div>
         <div className="mt-4">
           <h2 className="text-black text-2xl font-bold mb-4">Еще несколько способов связаться с нами</h2>
