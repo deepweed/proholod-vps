@@ -46,7 +46,7 @@ const ServiceButton = ( { buttonTitle, dialogTitle, dialogDesc }: ServiceProps )
         }
 
         const formData = {
-            title: { dialogTitle },
+            title: dialogTitle,
             name: name,
             phone: phone,
             contact: contact,
